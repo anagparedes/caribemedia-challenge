@@ -1,0 +1,11 @@
+<odoo>
+  <record id="action_add_prospects_tag" model="ir.actions.server">
+      <field name="name">Add Prospects Tag</field>
+      <field name="model_id" ref="model_contact_action"/>
+      <field name="state">code</field>
+      <field name="code">model.add_prospects_tag(record_ids)</field>
+      <field name="binding_model_id" ref="contacts.model_res_partner"/>
+      <field name="binding_type">action</field>
+      <field name="binding_view_types">list,form</field>
+  </record>
+</odoo>

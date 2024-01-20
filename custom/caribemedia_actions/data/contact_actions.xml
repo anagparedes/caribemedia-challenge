@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_contacts_add_prospects_tag" model="ir.actions.server">
+        <field name="name">Add Prospects Tag</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">model.write({'tag_ids': [(4, env.ref('base.res_partner_category_2').id)]})</field>
+        <field name="binding_model_id" ref="contacts.model_res_partner"/>
+        <field name="binding_type">model</field>
+    </record>
+    <record id="action_contacts_update_notes" model="ir.actions.server">
+      <field name="name">Update Contact Notes</field>
+      <field name="model_id" ref="base.model_res_partner"/>
+      <field name="state">code</field>
+      <field name="code">model.write({'notes': 'Updated on ' + fields.Datetime.now()})</field>
+      <field name="binding_model_id" ref="contacts.model_res_partner"/>
+      <field name="binding_type">model</field>
+  </record>
+
+  <record id="ir_cron_action_contacts_update_notes" model="ir.cron">
+    <field name="name">Update Contact Notes</field>
+    <field name="interval_number">1</field>
+    <field name="interval_type">minutes</field>
+    <field name="numbercall">2</field>
+    <field name="model_id" ref="base.model_res_partner"/>
+    <field name="state">code</field>
+    <field name="code">model.sudo().search([('notes', '=', False), ('id', '!=', int(model.env['ir.config_parameter'].sudo().get_param('last_processed_contact') or 0))], limit=2, order='id asc').write({'notes': 'Updated on ' + fields.Datetime.now()})</field>
+</record>
+
+</odoo>
