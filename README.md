@@ -1,6 +1,6 @@
 # Caribe Media Odoo Developer Test
 
-This repository contains the solution to the Odoo Developer Challenge provided by Caribe Media. The purpose of this test is to evaluate coding and problem-solving skills, as well as the ability to work with Odoo.
+This repository contains the attempt to the Odoo Developer Challenge provided by Caribe Media. The purpose of this test is to evaluate coding and problem-solving skills, as well as the ability to work with Odoo.
 
 ## Requirements
 
