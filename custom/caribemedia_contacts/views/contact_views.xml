@@ -1,0 +1,17 @@
+<!-- views.xml -->
+<odoo>
+    <record id="view_res_partner_form_inherited" model="ir.ui.view">
+        <field name="name">res.partner.form.inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='internal_notes']" position="after">
+                <page string="All Phones">
+                    <group>
+                        <field name="phone_ids" widget="one2many"  attrs="{'readonly': [('company_type', '=', 'person')]}"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
