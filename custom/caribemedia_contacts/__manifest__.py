@@ -4,7 +4,7 @@
     'author': 'Caribe Media',
     'category': 'CRM',
     'depends': ['base', 'contacts'],
-    'summary': 'Adds functionality to manage multiple phone numbers for clients.',
+    'summary': 'Add a functionality to manage multiple phone numbers for clients.',
      'data': [
         'security/caribemedia_security.xml',
         'security/ir.model.access.csv',
