@@ -50,7 +50,7 @@ This repository contains the solution to the Odoo Developer Challenge provided b
 
 - Add a new search filter on the search bar to allow users to search by sale price.
 
-#### Server Action for Contacts App
+### 4. Server Action for Contacts App
 
 - Create a server action that adds the "Prospects" tag to the selected contact.
 - The action must be available when the contact is selected.
